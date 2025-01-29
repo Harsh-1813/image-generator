@@ -1,0 +1,4 @@
+/server/venv/
+/ui/.next/
+/ui/node_modules/
+/server/.env
