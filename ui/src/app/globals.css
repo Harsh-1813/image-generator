@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal Google Font (e.g., Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Color Variables (adjust as needed) */
+:root {
+  --background: #f9fafb;     /* Light background */
+  --foreground: #2b2b2b;     /* Dark text */
+  --accent: #007acc;         /* Accent color (blue) */
+  --accent-hover: #005999;   /* Darker blue for hover */
+}
+:root {
+  --foreground: #2b2b2b;
+  --accent: #007acc;
+}
+
+/* Dark Mode (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #f1f5f9;
+    --accent: #409cff;
+    --accent-hover: #2c70b2;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px; /* Base font size */
+  margin: 0;
+  padding: 0;
+}
+
+/* Minimal Heading Style */
+.title-text {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+/* Minimal Button */
+.minimal-button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.minimal-button:hover {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent-hover);
+}
+
+/* Textarea / Input Field */
+input,
+textarea {
+  width: 100%;
+  background: #fff;
+  color: #333;
+  border: 2px solid var(--accent);
+  padding: 0.75rem;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  transition: border-color 0.2s;
+}
+
+textarea:focus,
+input:focus {
+  border-color: var(--accent-hover);
+  color:var(--accent-hover)
+}
+
+/* Image + Overlay Container */
+.group:hover img {
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.group:hover .download-overlay {
+  opacity: 1;
+}
+
+/* Download Overlay */
+.download-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Download Icon */
+.download-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
